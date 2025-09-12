@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Generator</title>
+</head>
+<body>
+
+
+  <form onsubmit="return false;">
+    <label for="matrix1">Matrix Size</label>
+   
+    <input type="number" id="matrix1" placeholder="Rows">
+    <input type="number" id="matrix2" placeholder="Columns">
+   
+    <button id="submit" onclick="changeContent()">Submit</button>
+  </form>
+
+  <div id="matrix-container" style="margin-top:20px;">
+    Matrix Container
+  </div>
+
+  <script>
+    function changeContent() {
+    
+      const rows = parseInt(document.getElementById("matrix1").value);
+      const cols = parseInt(document.getElementById("matrix2").value);
+      const container = document.getElementById("matrix-container");
+
+     
+      container.innerHTML = ""; 
+
+     
+    //   if (isNaN(rows) || isNaN(cols) || rows <= 0 || cols <= 0) {
+    //     container.innerHTML = "⚠️ Please enter valid numbers";
+    //     return;
+    //   }
+
+     
+      for (let i = 0; i < rows; i++) {
+        const row = document.createElement("div");
+        row.style.display = "flex"; 
+
+        for (let j = 0; j < cols; j++) {
+          const box = document.createElement("div");
+          box.style.border = "2px solid blue";
+          box.style.width = "50px";
+          box.style.height = "50px";
+          box.style.margin = "2px";
+          row.appendChild(box);
+        }
+        container.appendChild(row);
+      }
+    }
+  </script>
+
+</body>
+</html>
