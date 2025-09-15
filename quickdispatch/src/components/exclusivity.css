@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.exclusivity {
+    min-height: 100vh; /* Changed from height to min-height */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.exclusivity-image {
+    height: 800px; /* This height might still cause issues on very short screens */
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.exclusivity-container {
+    height: 800px; /* This height might still cause issues on very short screens */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.exclusivity-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    word-break: break-word; /* Added for long words */
+}
+
+.exclusivity-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    word-break: break-word; /* Added for long words */
+}
+
+.exclusivity-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.exclusivity-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #2e4c2e;
+    background-color: transparent;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.exclusivity-input::placeholder {
+    color: #aaa;
+}
+
+.exclusivity-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: #2e4c2e;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.exclusivity-privacy {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 20px;
+    word-break: break-word; /* Added for long words */
+}
+
+@media (max-width: 768px) {
+    .exclusivity {
+        flex-direction: column;
+        min-height: auto; /* Allow height to adjust based on content */
+    }
+
+    .exclusivity-image {
+        width: 100%;
+        height: 300px; /* Fixed height for image is generally acceptable */
+    }
+
+    .exclusivity-container {
+        width: 100%;
+        height: auto; /* Crucial: allow height to adjust based on content */
+        padding: 40px 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .exclusivity-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exclusivity-container {
+        padding: 30px 15px; /* Further reduce padding on very small screens */
+    }
+
+    .exclusivity-title {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+
+    .exclusivity-subtitle {
+        font-size: 0.9rem;
+    }
+}
