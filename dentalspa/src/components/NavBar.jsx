@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NavBar.css'; 
+import './NavBar.css';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -10,33 +10,30 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        
-        <div className="logo-container">
-          
-          <div className="logo-icon">
+    <nav className={`navbar ${isOpen ? 'menu-open' : ''}`}>
+      {/* New container for the top row elements (logo and toggle) */}
+      <div className="navbar-header-mobile">
+        <div className="navbar-brand">
+          <div className="logo-container">
+            <div className="logo-icon">
+              <img src="/logo2.png" alt="Dental Spa Logo" />
+            </div>
+            <div className="clinic-text">
+              <h1 className="clinic-name">DENTAL SPA</h1>
+              <p className="dental-clinic-tag">Implants | Orthodontics | Dentistry</p>
+            </div>
+          </div>
+          <div className="doctor-info">
+            Dr. Praveen Pal
+          </div>
+        </div>
 
-            <img src="/logo2.png" alt="" />
-           
-          </div>
-          <div className="clinic-text">
-            <h1 className="clinic-name">DENTAL SPA</h1>
-            <p className="dental-clinic-tag">Implants | Orthodontics | Dentistry</p>
-          </div>
-        </div>
-        <div className="doctor-info">
-          Dr. Praveen Pal
-        </div>
+        <button className={`menu-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </div>
-
-      <div className="mobile-only-title">DENTAL SPA</div> 
-
-      <button className="menu-toggle" onClick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation">
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
 
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
         <ul>

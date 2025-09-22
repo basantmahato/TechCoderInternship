@@ -1,0 +1,172 @@
+/* ProfileCard.css */
+
+/* Color variables based on the user's request */
+:root {
+  --background-color: #1d3557;
+  --primary-color: #f1faee;
+  --text-color: #f1faee;
+  --tag-color: #a8dadc;
+  --hover-color: #e63946;
+  --white: #ffffff;
+}
+
+body {
+  
+  color: var(--background-color);
+  font-family: sans-serif;
+}
+
+.profile-card-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  min-height: 100vh; */
+  padding: 20px;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.profile-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 50px;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: var(--tag-color);
+}
+
+.hand-wave-emoji {
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px 0 20px;
+  text-transform: uppercase;
+}
+
+.role-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+.role-separator {
+  color: var(--text-color);
+  margin: 0 5px;
+}
+
+.dev-text {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #1d3557;
+}
+
+.dev-emoji {
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+.intro {
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.hire-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--tag-color);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hire-button:hover {
+  background-color: var(--hover-color);
+  color: var(--white);
+}
+
+.profile-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.profile-avatar {
+  max-width: 50%;
+  height: auto;
+  border:2px solid black;
+  border-radius: 50%;
+  background-color: #1d3557;
+  
+}
+
+/* --- Responsive CSS --- */
+@media (max-width: 992px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-card-container {
+    padding: 10px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .hire-button {
+    padding: 10px 25px;
+  }
+}

@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-*{
+* {
   font-family: "Oswald", sans-serif;
 }
 
@@ -11,16 +11,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #edf6f9; /* White background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  background-color: #edf6f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 /* Navbar Brand (Logo and Clinic Text) */
 .navbar-brand {
   display: flex;
-  align-items: flex-start; /* Align logo and text at the top */
-  flex-shrink: 0; /* Prevent shrinking */
+  align-items: flex-start;
+  flex-shrink: 0;
 }
 
 .logo-container {
@@ -31,81 +31,78 @@
 
 .logo-icon {
   margin-right: 8px;
-  /* Basic styling for the SVG placeholder */
 }
 
-.logo-icon img{
+.logo-icon img {
   height: 40px;
 }
 
 .clinic-text {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically with logo */
+  justify-content: center;
 }
 
 .clinic-name {
-  font-size: 1.2em; /* Adjust as needed */
+  font-size: 1.2em;
   font-weight: bold;
-  color: #006d77; /* Dark blue from your image */
+  color: #006d77;
   margin: 0;
-  line-height: 1; /* Tighter line height */
+  line-height: 1;
 }
 
 .dental-clinic-tag {
-  font-size: 0.8em; /* Smaller for the tagline */
-  color: #6c757d; /* Lighter grey */
+  font-size: 0.8em;
+  color: #6c757d;
   margin: 0;
-  line-height: 1.2 /* Tighter line height */
+  line-height: 1.2;
 }
 
 .doctor-info {
-  background-color: #006d77; /* Blue from your image */
+  background-color: #006d77;
   color: white;
   padding: 5px 10px;
   font-size: 0.9em;
   font-weight: 500;
-  border-radius: 4px; /* Slightly rounded corners */
-  margin-left: 10px; /* Space between clinic text and doctor name */
-  white-space: nowrap; /* Prevent breaking on smaller screens for this element */
-  align-self: flex-end; /* Align to the bottom of the brand section */
+  border-radius: 4px;
+  margin-left: 10px;
+  white-space: nowrap;
+  align-self: flex-end;
   margin-bottom: 5px;
-
 }
 
 /* Mobile Specific Title - Hidden on Desktop */
 .mobile-only-title {
-  display: none; /* Hidden by default */
-  font-size: 1.2 em;
+  display: none;
+  font-size: 1.2em;
   font-weight: bold;
   color: #006d77;
-  flex-grow: 1; /* Allows it to take up space between logo and toggle */
-  margin-left: 15px; /* Space from logo */
+  flex-grow: 1;
+  margin-left: 15px;
 }
-
 
 /* Navigation Links (Desktop) */
 .navbar-links ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Horizontal on desktop */
+  display: flex;
 }
 
 .navbar-links li {
-  margin-left: 30px; /* Space between links */
+  margin-left: 30px;
 }
 
 .navbar-links a {
   text-decoration: none;
-  color: #1e3d59; /* Dark blue for links */
+  color: #1e3d59;
   font-weight: 500;
   font-size: 1.1em;
   transition: color 0.3s ease;
   padding: 8px 12px;
   border-radius: 4px;
   font-family: "Oswald", sans-serif;
-   font-weight: 440;
+  font-weight: 440;
 }
 
 .navbar-links a:hover,
@@ -113,12 +110,12 @@
   color: #edf6f9;
   background-color: #006d77;
   padding: 8px 12px;
-  border-radius: 4px; /* Blue on hover/active */
+  border-radius: 4px;
 }
 
 /* Mobile Toggle Button (Hamburger) */
 .menu-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -127,99 +124,96 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Ensure it's above other content if menu slides */
+  z-index: 10;
 }
 
 .menu-toggle .bar {
   width: 100%;
   height: 3px;
-  background-color: #006d77; /* Dark blue for bars */
+  background-color: #006d77;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
 
 /* --- Mobile Styles (Media Query) --- */
-@media (max-width: 992px) { /* Adjust breakpoint as needed for your design */
+@media (max-width: 992px) {
   .navbar {
-    flex-wrap: nowrap; /* Prevent wrapping on mobile, keep logo/toggle on one line */
-    justify-content: space-between;
+    /* Main navbar container to stack logo/toggle and links */
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 15px 20px; /* Adjust padding here */
   }
 
+  /*
+    This new container will hold the logo and the menu toggle on the same line
+    and push the toggle to the right.
+  */
+  .navbar-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    
+  }
+  
   .navbar-brand {
-    align-items: center; /* Center logo and text vertically on mobile */
+    align-items: center;
   }
 
   .logo-container {
-    margin-right: 0; /* No extra margin on mobile */
+    margin-right: 0;
   }
-
+  
   .clinic-text {
-    display: block; /* Hide 'SMILE ZONE DENTAL CLINIC' text on mobile */
+    display: flex;
   }
-
-  .doctor-info {
-    display: none; /* Hide 'Dr. Kumari Anjali' on mobile */
-  }
-
-  .dental-clinic-tag{
-    display:block;
-  }
-
-  .mobile-only-title {
-    font-size: 1.2em;
+  
+  .doctor-info, .mobile-only-title {
     display: none;
-    /* Show the simpler clinic name on mobile */
   }
 
   .menu-toggle {
     display: flex;
-     /* Show hamburger on mobile */
   }
 
   .navbar-links {
-    display: none; /* Hide navigation links by default on mobile */
-    flex-direction: column;
     width: 100%;
-    position: absolute;
-    top: 80px; /* Adjust based on navbar height */
-    left: 0;
-    background-color: #fff; /* White background for dropdown menu */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 5;
-    padding: 5px ;
-    transition: transform 0.3s ease-in-out;
-
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 5px;
   }
 
   .navbar-links.open {
-    display: flex; /* Show links when menu is open */
+    max-height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-links ul {
     flex-direction: column;
     width: 100%;
     text-align: center;
+    padding: 10px 0;
   }
 
   .navbar-links li {
-    margin: 10px 0; /* Vertical spacing for mobile links */
+    margin: 10px 0;
   }
 
   .navbar-links a {
     color: #e29578;
     padding: 10px 0;
-    display: block; /* Make links full width for easier tapping */
-    border-bottom: 1px solid #006d77; 
-    margin-left: 30px;
-    margin-right: 30px;
-    /* Separator for menu items */
+    display: block;
+    border-bottom: 1px solid #006d77;
+    margin: 0 30px;
   }
 
   .navbar-links li:last-child a {
-    border-bottom: none; /* No border for the last item */
+    border-bottom: none;
   }
 
-  /* Hamburger Icon Animation for 'X' */
   .menu-toggle.open .bar:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }

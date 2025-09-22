@@ -1,5 +1,5 @@
 import React from 'react';
-import './DentalCard.css'; // Assuming you have an image file
+import './DentalCard.css'; 
 
 const DentalCard = () => {
 //   const imageUrl = demoImage;
